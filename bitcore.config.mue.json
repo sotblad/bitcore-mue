@@ -1,0 +1,31 @@
+{
+  "bitcoreNode": {
+    "modules": ["./bitcore"],
+    "services": {
+      "api": {
+        "wallets": {
+          "allowCreationBeforeCompleteSync": true
+        }
+      }
+    },
+    "chains": {
+      "MUE": {
+        "mainnet": {
+          "chainSource": "p2p",
+          "trustedPeers": [
+            {
+              "host": "127.0.0.1",
+              "port": 40008
+            }
+          ],
+          "rpc": {
+            "host": "127.0.0.1",
+            "port": 40009,
+            "username": "mue",
+            "password": "mue"
+          }
+        }
+      }
+    }
+  }
+}

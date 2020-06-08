@@ -1,0 +1,29 @@
+<ion-list no-lines>
+  <ion-row>
+    <ion-item-divider>
+      Blockchain
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/img/currency_logos/mue.svg" class="logo" />
+      </ion-avatar>
+      <ion-label color="dark">
+       MUE <small class="pill"> mainnet</small>
+      </ion-label>
+    </ion-item>
+  </ion-row>
+</ion-list>
+
+<ion-list radio-group [(ngModel)]="currencySymbol" *ngIf="showUnits">
+  <ion-item-divider>
+    Units
+  </ion-item-divider>
+
+  <ion-item *ngFor="let unit of units">
+    <ion-label color="dark">{{ unit }}</ion-label>
+    <ion-radio value="{{ unit }}" [checked]="unit === currencySymbol" (click)="changeUnit(unit)">
+    </ion-radio>
+  </ion-item>
+</ion-list>
+
