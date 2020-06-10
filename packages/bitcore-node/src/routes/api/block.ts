@@ -3,6 +3,7 @@ import { ChainStateProvider } from '../../providers/chain-state';
 import { SetCache, CacheTimes, Confirmations } from '../middleware';
 import { TransactionStorage } from '../../models/transaction';
 import { CoinStorage, ICoin } from '../../models/coin';
+import { BitcoinBlockStorage } from '../../models/block';
 
 const router = require('express').Router({ mergeParams: true });
 
@@ -30,7 +31,7 @@ router.get('/', async function(req: Request, res: Response) {
 router.get('/tip', async function(req: Request, res: Response) {
   let { chain, network } = req.params;
   try {
-    let tip = await ChainStateProvider.getLocalTip({ chain, network });
+    let tip = await BitcoinBlockStorage.getLocalTip({ chain, network });
     return res.json(tip);
   } catch (err) {
     console.error(err);
