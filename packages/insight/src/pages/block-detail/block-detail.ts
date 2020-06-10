@@ -67,7 +67,7 @@ export class BlockDetailPage {
         this.block = block;
         this.txProvider
           .getConfirmations(this.block.height, this.chainNetwork)
-          .subscribe(confirmations => (this.confirmations = Math.abs(confirmations)));
+          .subscribe(confirmations => (this.confirmations = confirmations));
         this.loading = false;
       },
       err => {
