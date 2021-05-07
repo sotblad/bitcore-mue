@@ -108,7 +108,7 @@
     "socket.io-client": "2.1.1",
     "source-map-support": "^0.5.13",
     "through2": "2.0.3",
-    "underscore": "1.8.3",
+    "underscore": "1.12.1",
     "web3": "1.2.1",
     "winston": "3.2.0"
   },
